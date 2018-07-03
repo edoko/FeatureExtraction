@@ -123,7 +123,7 @@ getDbHdpsCovariateData <- function(connection,
                                                    has_excluded_covariate_concept_ids = hasExcludedCovariateConceptIds,
                                                    has_included_covariate_concept_ids = hasIncludedCovariateConceptIds,
                                                    delete_covariates_small_count = covariateSettings$deleteCovariatesSmallCount)
-
+  write.table(renderedSql, "/hdpscovariates.txt", sep="\t")
   DatabaseConnector::executeSql(connection, renderedSql)
   writeLines("Done")
 
