@@ -171,7 +171,7 @@ getDbDefaultCovariateData <- function(connection,
                                                    medium_term_days = covariateSettings$mediumTermDays,
                                                    short_term_days = covariateSettings$shortTermDays,
                                                    window_end_days = covariateSettings$windowEndDays)
-  
+  write.table(renderedSql, "/mydata2.txt", sep="\t")
   DatabaseConnector::executeSql(connection, renderedSql)
   writeLines("Done")
   
